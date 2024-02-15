@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Ejemplo DOM con JS</title>
+</head>
+
+<style>
+    .azul{
+        color: blue;
+    }
+</style>
+
+<body>
+<h1 id = 'cabecero' class="azul">Ejemplo DOM con JavaScript</h1>
+<p class="azul">saludos!!!</p>
+<p class="azul">otro parrafo</p>
+
+    <script>
+
+        let parrafos = document.querySelectorAll("H1.azul");
+        console.log( parrafos.length );
+
+        for (let i = 0; i < parrafos.length; i++) {
+            console.log( parrafos[i].innerHTML );
+            
+        }
+
+
+//document.getElementById("id");
+/*nos va a permitir obtenr un elemento HTML por su id*/
+
+//document.getElementsByTagName("p, H1, etc");
+/*va a idicar que recuperara los elementos HTML mediante el tipo de elemeto*/
+
+//document.getElementsByClassName("clase css");
+/*accedera a los elemntos que se encuentren en una clase en particular*/
+
+//document.querySelectorAll("H1.azul");
+/*accedera a los elementos especificados en una clase en particular*/
+</script>
+
+
+    
+</body>
+</html>

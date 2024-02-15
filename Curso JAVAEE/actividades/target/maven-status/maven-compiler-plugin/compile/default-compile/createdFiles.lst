@@ -1,0 +1,14 @@
+datos\ArchivoDao.class
+dominio\Avance.class
+datos\plantillaGeneralDao.class
+web\servletTareas.class
+datos\EmpleadoDao.class
+datos\TareaDao.class
+dominio\Empleado.class
+dominio\Tarea.class
+dominio\Archivo.class
+dominio\PlantillaGeneral.class
+datos\AvanceDao.class
+datos\Conexion.class
+web\loginServlet.class
+servlet.class

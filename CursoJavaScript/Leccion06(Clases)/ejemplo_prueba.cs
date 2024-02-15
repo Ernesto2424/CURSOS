@@ -1,0 +1,2 @@
+
+console.wrrite("fgd");

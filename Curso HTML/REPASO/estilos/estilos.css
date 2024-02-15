@@ -1,0 +1,15 @@
+
+h1{
+    color: blue;
+}
+
+p{
+    color: white;
+    background-color: crimson;
+    padding: 30px;
+    border: 15px solid powderblue;
+    margin:auto 50px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}

@@ -1,0 +1,23 @@
+h1{
+    color: #9c89b8;
+    text-align: center;
+}
+
+p{
+    color: white;
+    background-color: crimson;
+    padding: 15px;
+    border: 8px solid powderblue;
+    /*margin-top: 40px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    */
+    /*margin: superior derecha inferior izquierdo*/
+   /* margin: 40px 10px 20px 10px; */
+   /*esta es otra manera de escribir cuando se aplica valores de izq y der*/
+    margin: auto 30px;
+    text-align: center;
+}
+
+/* comentario*/

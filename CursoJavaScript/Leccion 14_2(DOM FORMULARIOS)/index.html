@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM DE FORMULARIOS</title>
+  </head>
+  <body>
+    <form action="" method="get" id="formulario">
+      Nombre: <input type="text" name="nombre" value="Ernesto" /><br />
+      Apellido: <input type="text" name="apellido" value="Flores" /><br />
+    </form>
+
+    <button onclick="mostrarValores()">Mostrar</button>
+
+    <div id="valores"></div>
+
+    <script>
+
+        function mostrarValores(){
+            let formulario = document.forms["formulario"];
+            let texto ="";
+            let nombre = formulario["nombre"];
+            let apellido = formulario["apellido"];
+            /*En este caso se accedio al formulario desde
+            cada elemento, pero se puede acceder a todos
+            mediante un ciclo for*/
+            //console.log(texto);
+            texto = nombre.value + "<br/>" + apellido.value;
+            document.getElementById("valores").innerHTML = texto;
+        }
+
+    </script>
+  </body>
+</html>

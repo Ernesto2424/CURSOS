@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>titulo del documento</h1>
+    <br />
+
+    <form action="" id="formulario">
+      Nombre: <input type="text" id="nombre" /> <br /><br />
+      Apellido: <input type="text" id="apellido" />
+    </form>
+    <script>
+
+        const forma = document.getElementById("formulario");
+        forma.addEventListener("focus", (evento) => {
+        evento.target.style.background = "yellow";
+      } , true);
+
+        forma.addEventListener("blur", (evento) => {
+        evento.target.style.background = "white";
+      } , true);
+        
+
+    </script>
+  </body>
+</html>

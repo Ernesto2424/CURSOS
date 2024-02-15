@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Consulta de pedido</title>
+</head>
+<body>
+
+	<?php
+
+		include("Conectar.php");
+		$link=Conectarse();
+		$resultado=pg_exec("SELECT * FROM pedido");
+		if(!$resultado){echo "<b>Error de busqueda</b>"; exit;}
+
+			$filas=pg_numrows($resultado);
+			if($filas==0){echo "No se encontro ningun registro\n"; exit;}else{
+				echo "<ul>";
+	?>
+
+<table border=1 cellspacing=1 cellpadding=1>
+	<TR> <td>&nbsp;ID Pedido</td> <td>&nbsp;Fecha&nbsp;</td>
+		 <td>&nbsp;Instrucciones&nbsp;</td><td>&nbsp;Hora&nbsp;</td><td>&nbsp;Precio Envio&nbsp;</td><td>&nbsp;ID Cliente&nbsp;</td> </TR>
+
+
+
+	<?php
+
+		for($cont=0; $cont<$filas; $cont++){
+			$campo1=pg_result($resultado, $cont, 0);
+			$campo2=pg_result($resultado, $cont, 1);
+			$campo3=pg_result($resultado, $cont, 2);
+			$campo4=pg_result($resultado, $cont, 3);
+			$campo5=pg_result($resultado, $cont, 4);
+			$campo6=pg_result($resultado, $cont, 5);
+
+			printf("<TR> <td>&nbsp;%s</td> <td>&nbsp;%s</td> 
+					     <td>&nbsp;%s</td> <td>&nbsp;%s</td>
+					     <td>&nbsp;%s</td> <td>&nbsp;%s</td> </TR>",
+					 $campo1,$campo2,$campo3,$campo4,$campo5,$campo6);
+		}
+			}
+
+	?>
+
+</table>
+	<?php
+	pg_FreeResult($resultado);
+	if(!pg_close($link)){
+		echo "Error desconectado de la base de datos";
+		exit();
+	}
+	?>
+
+</body>
+</html>

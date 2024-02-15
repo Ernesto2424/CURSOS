@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <head>
+        <title>Hola Mundo JSF</title>
+    </head>
+    <body>
+
+        <h:form>
+            <h:messages globalOnly="true"></h:messages>
+            <table>
+                <tr>
+                    <td><h:outputLabel for="nombre" value="#{msgs['VacanteForm.nombre']}:"></h:outputLabel></td>
+                    <td><h:inputText id="nombre" value="#{candidato.nombre}" required="true"></h:inputText></td>
+                    <td><h:message for="nombre"></h:message></td>
+                </tr>
+                
+                <tr>
+                    <td><h:outputLabel for="apellido" value="#{msgs['VacanteForm.apellido']}:"></h:outputLabel></td>
+                    <td><h:inputText id="apellido" value="#{candidato.apellido}" required="true"></h:inputText></td>
+                    <td><h:message for="apellido"></h:message></td>
+                </tr>
+                
+                <tr>
+                    <td><h:outputLabel for="salario" value="#{msgs['VacanteForm.sueldo']}:"></h:outputLabel></td>
+                    <td><h:inputText id="salario" value="#{candidato.salarioDeseado}" required="true">
+                            <f:validateLongRange minimum="500" maximum="5000"></f:validateLongRange>
+                        </h:inputText></td>
+                    <td><h:message for="salario"></h:message></td>
+                </tr>
+                
+                <tr>
+                    <td><h:outputLabel for="fechaNacimiento" value="#{msgs['VacanteForm.fechaNacimiento']}:"></h:outputLabel></td>
+                     <td><h:inputText id="fechaNacimiento" value="#{candidato.fechaNacimiento}" required="true">
+                             <f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
+                         </h:inputText></td>
+                    <td><h:message for="fechaNacimiento"></h:message></td>
+                </tr>
+                
+            </table>
+
+            <h:commandButton action="#{vacanteForm.enviar}" value="#{msgs['VacanteForm.enviar']}"></h:commandButton>
+
+        </h:form>
+
+    </body>
+</html>
